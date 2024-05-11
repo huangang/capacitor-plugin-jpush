@@ -161,23 +161,23 @@ const JPushMethods = async () => {
 
 <docgen-index>
 
-- [`startJPush()`](#startjpush)
-- [`setDebugMode(...)`](#setdebugmode)
-- [`setAlias(...)`](#setalias)
-- [`deleteAlias(...)`](#deletealias)
-- [`addTags(...)`](#addtags)
-- [`deleteTags(...)`](#deletetags)
-- [`cleanTags()`](#cleantags)
-- [`setBadgeNumber(...)`](#setbadgenumber)
-- [`removeListeners()`](#removelisteners)
-- [`getRegistrationID()`](#getregistrationid)
-- [`checkPermissions()`](#checkpermissions)
-- [`requestPermissions()`](#requestpermissions)
-- [`openNotificationSetting()`](#opennotificationsetting)
-- [`addListener('notificationReceived', ...)`](#addlistenernotificationreceived)
-- [`addListener('notificationOpened', ...)`](#addlistenernotificationopened)
-- [Interfaces](#interfaces)
-- [Type Aliases](#type-aliases)
+* [`startJPush()`](#startjpush)
+* [`setDebugMode(...)`](#setdebugmode)
+* [`setAlias(...)`](#setalias)
+* [`deleteAlias(...)`](#deletealias)
+* [`addTags(...)`](#addtags)
+* [`deleteTags(...)`](#deletetags)
+* [`cleanTags()`](#cleantags)
+* [`setBadgeNumber(...)`](#setbadgenumber)
+* [`removeListeners()`](#removelisteners)
+* [`getRegistrationID()`](#getregistrationid)
+* [`checkPermissions()`](#checkpermissions)
+* [`requestPermissions()`](#requestpermissions)
+* [`openNotificationSetting()`](#opennotificationsetting)
+* [`addListener('notificationReceived', ...)`](#addlistenernotificationreceived)
+* [`addListener('notificationOpened', ...)`](#addlistenernotificationopened)
+* [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -192,7 +192,8 @@ startJPush() => Promise<void>
 
 启动极光推送服务，即使没有获取到通知权限，也会进行推送服务初始化
 
----
+--------------------
+
 
 ### setDebugMode(...)
 
@@ -206,7 +207,8 @@ setDebugMode(isDebug: boolean) => Promise<void>
 | ------------- | -------------------- |
 | **`isDebug`** | <code>boolean</code> |
 
----
+--------------------
+
 
 ### setAlias(...)
 
@@ -220,7 +222,8 @@ setAlias(options: AliasOptions) => Promise<void>
 | ------------- | ----------------------------------------------------- |
 | **`options`** | <code><a href="#aliasoptions">AliasOptions</a></code> |
 
----
+--------------------
+
 
 ### deleteAlias(...)
 
@@ -234,7 +237,8 @@ deleteAlias(options?: DeleteAlias | undefined) => Promise<void>
 | ------------- | --------------------------------------------------- |
 | **`options`** | <code><a href="#deletealias">DeleteAlias</a></code> |
 
----
+--------------------
+
 
 ### addTags(...)
 
@@ -248,7 +252,8 @@ addTags(options: SetTagsOptions) => Promise<void>
 | ------------- | --------------------------------------------------------- |
 | **`options`** | <code><a href="#settagsoptions">SetTagsOptions</a></code> |
 
----
+--------------------
+
 
 ### deleteTags(...)
 
@@ -262,7 +267,8 @@ deleteTags(options: SetTagsOptions) => Promise<void>
 | ------------- | --------------------------------------------------------- |
 | **`options`** | <code><a href="#settagsoptions">SetTagsOptions</a></code> |
 
----
+--------------------
+
 
 ### cleanTags()
 
@@ -270,7 +276,8 @@ deleteTags(options: SetTagsOptions) => Promise<void>
 cleanTags() => Promise<void>
 ```
 
----
+--------------------
+
 
 ### setBadgeNumber(...)
 
@@ -284,7 +291,8 @@ setBadgeNumber(options?: SetBadgeNumberOptions | undefined) => Promise<void>
 | ------------- | ----------------------------------------------------------------------- |
 | **`options`** | <code><a href="#setbadgenumberoptions">SetBadgeNumberOptions</a></code> |
 
----
+--------------------
+
 
 ### removeListeners()
 
@@ -292,7 +300,8 @@ setBadgeNumber(options?: SetBadgeNumberOptions | undefined) => Promise<void>
 removeListeners() => Promise<void>
 ```
 
----
+--------------------
+
 
 ### getRegistrationID()
 
@@ -304,7 +313,8 @@ getRegistrationID() => Promise<{ registrationId: string; }>
 
 **Returns:** <code>Promise&lt;{ registrationId: string; }&gt;</code>
 
----
+--------------------
+
 
 ### checkPermissions()
 
@@ -316,7 +326,8 @@ checkPermissions() => Promise<PermissionStatus>
 
 **Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
 
----
+--------------------
+
 
 ### requestPermissions()
 
@@ -328,7 +339,8 @@ requestPermissions() => Promise<PermissionStatus>
 
 **Returns:** <code>Promise&lt;<a href="#permissionstatus">PermissionStatus</a>&gt;</code>
 
----
+--------------------
+
 
 ### openNotificationSetting()
 
@@ -338,7 +350,8 @@ openNotificationSetting() => Promise<void>
 
 打开推送通知权限设置页面（目前仅安卓支持）
 
----
+--------------------
+
 
 ### addListener('notificationReceived', ...)
 
@@ -355,7 +368,8 @@ addListener(eventName: 'notificationReceived', listenerFunc: (notificationData: 
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
----
+--------------------
+
 
 ### addListener('notificationOpened', ...)
 
@@ -372,9 +386,11 @@ addListener(eventName: 'notificationOpened', listenerFunc: (notificationData: Re
 
 **Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt;</code>
 
----
+--------------------
+
 
 ### Interfaces
+
 
 #### AliasOptions
 
@@ -383,11 +399,13 @@ addListener(eventName: 'notificationOpened', listenerFunc: (notificationData: Re
 | **`alias`**    | <code>string</code> |
 | **`sequence`** | <code>number</code> |
 
+
 #### DeleteAlias
 
 | Prop           | Type                |
 | -------------- | ------------------- |
 | **`sequence`** | <code>number</code> |
+
 
 #### SetTagsOptions
 
@@ -395,23 +413,27 @@ addListener(eventName: 'notificationOpened', listenerFunc: (notificationData: Re
 | ---------- | --------------------- |
 | **`tags`** | <code>string[]</code> |
 
+
 #### SetBadgeNumberOptions
 
 | Prop        | Type                |
 | ----------- | ------------------- |
 | **`badge`** | <code>number</code> |
 
+
 #### PermissionStatus
 
-| Prop             | Type                                                        | Description                                                                                               |
-| ---------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Prop             | Type                                                        | Description                                                                  |
+| ---------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | **`permission`** | <code><a href="#permissionstate">PermissionState</a></code> | prompt: 首次申请，询问。 prompt-with-rationale： 每次都询问。 granted： 已获取权限。 denied：权限已拒绝。 |
+
 
 #### PluginListenerHandle
 
 | Prop         | Type                                      |
 | ------------ | ----------------------------------------- |
 | **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
+
 
 #### ReceiveNotificationData
 
@@ -422,7 +444,9 @@ addListener(eventName: 'notificationOpened', listenerFunc: (notificationData: Re
 | **`subTitle`** | <code>string</code>                                                                                                                   |
 | **`rawData`**  | <code>{ [x: string]: any; aps: { alert: { body: string; subTitle: string; title: string; }; badge: number; sound: string; }; }</code> |
 
+
 ### Type Aliases
+
 
 #### PermissionState
 

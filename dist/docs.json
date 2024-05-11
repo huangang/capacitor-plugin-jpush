@@ -1,0 +1,494 @@
+{
+  "api": {
+    "name": "JPushPlugin",
+    "slug": "jpushplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "startJPush",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "启动极光推送服务，即使没有获取到通知权限，也会进行推送服务初始化",
+        "complexTypes": [],
+        "slug": "startjpush"
+      },
+      {
+        "name": "setDebugMode",
+        "signature": "(isDebug: boolean) => Promise<void>",
+        "parameters": [
+          {
+            "name": "isDebug",
+            "docs": "",
+            "type": "boolean"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "isDebug"
+          }
+        ],
+        "docs": "开启 debug 模式 log日志",
+        "complexTypes": [],
+        "slug": "setdebugmode"
+      },
+      {
+        "name": "setAlias",
+        "signature": "(options: AliasOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "AliasOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options"
+          }
+        ],
+        "docs": "设置推送别名，可作为推送消息的目标对象",
+        "complexTypes": [
+          "AliasOptions"
+        ],
+        "slug": "setalias"
+      },
+      {
+        "name": "deleteAlias",
+        "signature": "(options?: DeleteAlias | undefined) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "DeleteAlias | undefined"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options"
+          }
+        ],
+        "docs": "删除推送别名",
+        "complexTypes": [
+          "DeleteAlias"
+        ],
+        "slug": "deletealias"
+      },
+      {
+        "name": "addTags",
+        "signature": "(options: SetTagsOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "SetTagsOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options"
+          }
+        ],
+        "docs": "设置推送标签",
+        "complexTypes": [
+          "SetTagsOptions"
+        ],
+        "slug": "addtags"
+      },
+      {
+        "name": "deleteTags",
+        "signature": "(options: SetTagsOptions) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "SetTagsOptions"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options"
+          }
+        ],
+        "docs": "删除推送标签",
+        "complexTypes": [
+          "SetTagsOptions"
+        ],
+        "slug": "deletetags"
+      },
+      {
+        "name": "cleanTags",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "cleantags"
+      },
+      {
+        "name": "setBadgeNumber",
+        "signature": "(options?: SetBadgeNumberOptions | undefined) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "SetBadgeNumberOptions | undefined"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "options"
+          }
+        ],
+        "docs": "设置 APP 角标数字，设为 0 即清空角标",
+        "complexTypes": [
+          "SetBadgeNumberOptions"
+        ],
+        "slug": "setbadgenumber"
+      },
+      {
+        "name": "removeListeners",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "removelisteners"
+      },
+      {
+        "name": "getRegistrationID",
+        "signature": "() => Promise<{ registrationId: string; }>",
+        "parameters": [],
+        "returns": "Promise<{ registrationId: string; }>",
+        "tags": [],
+        "docs": "获取设备的注册 ID，若服务重新注册，则返回的 ID 是不一样的",
+        "complexTypes": [],
+        "slug": "getregistrationid"
+      },
+      {
+        "name": "checkPermissions",
+        "signature": "() => Promise<PermissionStatus>",
+        "parameters": [],
+        "returns": "Promise<PermissionStatus>",
+        "tags": [],
+        "docs": "检查通知权限状态",
+        "complexTypes": [
+          "PermissionStatus"
+        ],
+        "slug": "checkpermissions"
+      },
+      {
+        "name": "requestPermissions",
+        "signature": "() => Promise<PermissionStatus>",
+        "parameters": [],
+        "returns": "Promise<PermissionStatus>",
+        "tags": [],
+        "docs": "申请通知权限",
+        "complexTypes": [
+          "PermissionStatus"
+        ],
+        "slug": "requestpermissions"
+      },
+      {
+        "name": "openNotificationSetting",
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "returns": "Promise<void>",
+        "tags": [],
+        "docs": "打开推送通知权限设置页面（目前仅安卓支持）",
+        "complexTypes": [],
+        "slug": "opennotificationsetting"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'notificationReceived', listenerFunc: (notificationData: ReceiveNotificationData) => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'notificationReceived'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(notificationData: ReceiveNotificationData) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "eventName"
+          },
+          {
+            "name": "param",
+            "text": "listenerFunc"
+          }
+        ],
+        "docs": "监听推送消息",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "ReceiveNotificationData"
+        ],
+        "slug": "addlistenernotificationreceived"
+      },
+      {
+        "name": "addListener",
+        "signature": "(eventName: 'notificationOpened', listenerFunc: (notificationData: ReceiveNotificationData) => void) => Promise<PluginListenerHandle>",
+        "parameters": [
+          {
+            "name": "eventName",
+            "docs": "",
+            "type": "'notificationOpened'"
+          },
+          {
+            "name": "listenerFunc",
+            "docs": "",
+            "type": "(notificationData: ReceiveNotificationData) => void"
+          }
+        ],
+        "returns": "Promise<PluginListenerHandle>",
+        "tags": [
+          {
+            "name": "param",
+            "text": "eventName"
+          },
+          {
+            "name": "param",
+            "text": "listenerFunc"
+          }
+        ],
+        "docs": "监听消息栏通知被点击",
+        "complexTypes": [
+          "PluginListenerHandle",
+          "ReceiveNotificationData"
+        ],
+        "slug": "addlistenernotificationopened"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "AliasOptions",
+      "slug": "aliasoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "alias",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "sequence",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number | undefined"
+        }
+      ]
+    },
+    {
+      "name": "DeleteAlias",
+      "slug": "deletealias",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "sequence",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number | undefined"
+        }
+      ]
+    },
+    {
+      "name": "SetTagsOptions",
+      "slug": "settagsoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "tags",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string[]"
+        }
+      ]
+    },
+    {
+      "name": "SetBadgeNumberOptions",
+      "slug": "setbadgenumberoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "badge",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "PermissionStatus",
+      "slug": "permissionstatus",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "permission",
+          "tags": [],
+          "docs": "prompt: 首次申请，询问。\nprompt-with-rationale： 每次都询问。\ngranted： 已获取权限。\ndenied：权限已拒绝。",
+          "complexTypes": [
+            "PermissionState"
+          ],
+          "type": "PermissionState"
+        }
+      ]
+    },
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
+        }
+      ]
+    },
+    {
+      "name": "ReceiveNotificationData",
+      "slug": "receivenotificationdata",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "title",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "content",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "subTitle",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "rawData",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "{ [x: string]: any; aps: { alert: { body: string; subTitle: string; title: string; }; badge: number; sound: string; }; }"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [
+    {
+      "name": "PermissionState",
+      "slug": "permissionstate",
+      "docs": "",
+      "types": [
+        {
+          "text": "'prompt'",
+          "complexTypes": []
+        },
+        {
+          "text": "'prompt-with-rationale'",
+          "complexTypes": []
+        },
+        {
+          "text": "'granted'",
+          "complexTypes": []
+        },
+        {
+          "text": "'denied'",
+          "complexTypes": []
+        }
+      ]
+    }
+  ],
+  "pluginConfigs": [
+    {
+      "name": "JPush",
+      "slug": "jpush",
+      "properties": [
+        {
+          "name": "appKey",
+          "tags": [],
+          "docs": "推送服务的基础信息设置，必填项，否则推送服务不会初始化",
+          "complexTypes": [],
+          "type": "string"
+        },
+        {
+          "name": "channel",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "isProduction",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "cleanBadgeWhenActive",
+          "tags": [],
+          "docs": "设备返回前台是,是否自动清空角标,默认 false",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        }
+      ],
+      "docs": ""
+    }
+  ]
+}
